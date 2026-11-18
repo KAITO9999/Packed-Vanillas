@@ -74,7 +74,7 @@ A Termux static-check script currently passes 26/26 assertions:
 - internal bootstrap, Mixin configs, access widener, and MIT notice are present;
 - Forge-only target and original mod id are preserved.
 
-This is static validation, not a compile or runtime pass. A GitHub Actions compile of the internalized branch is still required.
+This is static validation, not a compile or runtime pass. The first GitHub Actions compile reached common Java compilation and exposed one additional upstream gap: ShelfRenderer references ModelBoundingBoxManager, but that class is absent from the public Platform 1.20.1 source. A local implementation was added to derive bounds from baked quads using the FIXED item transform. The next CI run must verify this implementation and reveal any further missing API or dependency.
 
 ## Resource-pack compatibility: 1.20.1 vs modern packs
 
@@ -84,17 +84,19 @@ Minecraft 1.20.1 uses resource-pack format 15. Modern resource packs have moved 
 - 1.21.6: strict JSON parsing for resource-pack JSON.
 - 1.21.9: `min_format` / `max_format` replace `supported_formats` for modern pack metadata; `pack_format` is optional for new-format packs.
 - 1.21.11: resource-pack format 75; item textures are separated into an `items` atlas without mipmaps; atlas sprite-name collisions warn; block model/state rotations expand; texture `.mcmeta` gains `mipmap_strategy` and `alpha_cutoff_bias`.
-- 26.1: resource-pack format 84, with additional shader/resource changes.
+- 26.3 (latest stable release as of 2026-11-18): resource-pack format 97.1; armor-trim palette texture paths changed, terrain shaders were refactored for multi-draw, and Order-Independent Transparency (OIT) shader resources were added/renamed.
+- 26.4 Snapshot 9/10 (development snapshot, not the stable target): resource-pack format 104.0; OIT shader interfaces continue changing, including subpass-based rendering and additional shader resource changes.
 
-Compatibility should be implemented at the resource-pack ingestion/adapter boundary, not by changing the global renderer blindly. Initial safe scope to investigate:
+Default compatibility target should be the latest stable release, 26.3 (format 97.1). 26.4 snapshots should be an explicitly experimental best-effort tier, because the renderer and OIT shader interfaces are still changing. Compatibility should be implemented at the resource-pack ingestion/adapter boundary, not by changing the global renderer blindly. Initial safe scope to investigate:
 
 1. Read modern `pack.mcmeta` and normalize metadata for the 1.20.1 pack reader without modifying the user's source archive.
 2. Convert the subset of modern `items/*.json` item-model definitions that can be represented by 1.20.1 item models; explicitly warn/skip unsupported node types instead of silently producing broken models.
 3. Merge/remap the modern `items` atlas definitions into the legacy 1.20.1 blocks atlas where semantics permit.
 4. Translate supported `.mcmeta` animation/texture fields and ignore only fields with no 1.20.1 equivalent.
-5. Treat modern shader packs, equipment definitions, and expanded model rotations as separate compatibility classes; do not claim full support unless each has a faithful conversion.
+5. Backport supported 26.3 palette texture path changes and compatible non-shader asset renames where their meaning is unchanged.
+6. Treat modern shader packs, equipment definitions, expanded model rotations, and snapshot-only renderer resources as separate compatibility classes; do not claim full support unless each has a faithful conversion. Core shaders should be treated as unsupported/experimental rather than mechanically rewritten.
 
-The mod's existing resource reload code primarily handles its own JSON assets (waypoint styles, foliage colors, ghast equipment). It does not currently provide a general modern resource-pack conversion layer.
+The mod's existing resource reload code primarily handles its own JSON assets (waypoint styles, foliage colors, ghast equipment). It does not currently provide a general modern resource-pack conversion layer. Official reference points: [1.21.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-4), [1.21.9](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-9), [1.21.11](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-11), [26.3](https://www.minecraft.net/en-us/article/minecraft-java-edition-26-3), and [26.4 Snapshot 9](https://www.minecraft.net/en-us/article/minecraft-26-4-snapshot-9).
 
 ## Performance candidates (behavior-preserving first)
 
@@ -140,7 +142,7 @@ The initial workflow exposed two upstream repository issues:
 1. The checked-in Gradle wrapper JAR is missing and the wrapper script is not executable. The CI workflow therefore installs Gradle 8.14.4 directly with `gradle/actions/setup-gradle`.
 2. With Gradle available, the unmodified upstream project still fails at dependency resolution because the Platform common JAR is expected at `/libs/Platform-common-1.20.1-1.4.2.jar`, which is not part of a clean checkout.
 
-The second failure is the reproducibility defect the internal-source approach is intended to remove. The post-internalization CI result is pending.
+The second failure is the reproducibility defect the internal-source approach is intended to remove. The first post-internalization CI run failed at the missing ModelBoundingBoxManager symbol; that missing API has since been filled locally. A second CI compile is pending.
 
 ## Remaining implementation order
 
