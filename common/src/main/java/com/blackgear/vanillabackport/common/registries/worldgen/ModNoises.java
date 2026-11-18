@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.worldgen;
 
-import com.blackgear.platform.core.api.registrar.bootstrap.NoiseRegistrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.bootstrap.NoiseRegistrar;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.synth.NormalNoise.NoiseParameters;

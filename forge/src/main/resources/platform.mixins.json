@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.blackgear.vanillabackport.internal.platform.core.mixin.forge",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "LootPoolMixin",
+    "LootTableMixin",
+    "SpawnPlacementRegisterEventMixin",
+    "access.MergedSpawnPredicateAccessor",
+    "access.ModContainerAccessor"
+  ],
+  "client": [
+    "client.BEWLRMixin",
+    "client.renderer.BoatRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

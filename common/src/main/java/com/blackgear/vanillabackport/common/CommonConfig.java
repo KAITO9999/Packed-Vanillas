@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common;
 
-import com.blackgear.platform.core.util.config.ConfigBuilder;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ConfigBuilder;
 import com.blackgear.vanillabackport.common.level.recipes.RecipeStrategy;
 
 public class CommonConfig {

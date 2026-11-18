@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.api.modules.waypoints;
 
-import com.blackgear.platform.common.v2.entity.EntityAttributeEvents;
+import com.blackgear.vanillabackport.internal.platform.common.v2.entity.EntityAttributeEvents;
 import com.blackgear.vanillabackport.common.api.modules.waypoints.WaypointTransmitter.Connection;
 import com.blackgear.vanillabackport.common.registries.ModGameRules;
 import com.google.common.collect.*;

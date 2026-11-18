@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.core;
 
-import com.blackgear.platform.core.Environment;
+import com.blackgear.vanillabackport.internal.platform.core.Environment;
 
 public class ModChecker {
     public static final boolean BETTER_COMBAT = Environment.hasModLoaded("bettercombat");

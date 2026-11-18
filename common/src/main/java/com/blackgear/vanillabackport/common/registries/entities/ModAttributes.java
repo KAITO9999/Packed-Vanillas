@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.entities;
 
-import com.blackgear.platform.core.api.registrar.Registrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.Registrar;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.ai.attributes.Attribute;

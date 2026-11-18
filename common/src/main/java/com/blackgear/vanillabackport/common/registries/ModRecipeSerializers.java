@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.common.api.modules.bundle_ui.BundleColoring;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.core.registries.BuiltInRegistries;

@@ -1,10 +1,10 @@
 package com.blackgear.vanillabackport.core;
 
-import com.blackgear.platform.core.Environment;
-import com.blackgear.platform.core.ModInstance;
-import com.blackgear.platform.core.events.ServerLifecycleEvents;
-import com.blackgear.platform.core.util.config.ConfigLoader;
-import com.blackgear.platform.core.util.config.ModConfig;
+import com.blackgear.vanillabackport.internal.platform.core.Environment;
+import com.blackgear.vanillabackport.internal.platform.core.ModInstance;
+import com.blackgear.vanillabackport.internal.platform.core.events.ServerLifecycleEvents;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ConfigLoader;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ModConfig;
 import com.blackgear.vanillabackport.client.ClientConfig;
 import com.blackgear.vanillabackport.client.ClientSetup;
 import com.blackgear.vanillabackport.client.registries.ModCreativeTabs;

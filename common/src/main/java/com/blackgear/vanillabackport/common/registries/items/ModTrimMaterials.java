@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.items;
 
-import com.blackgear.platform.core.api.registrar.bootstrap.BootstrapRegistrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.bootstrap.BootstrapRegistrar;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;

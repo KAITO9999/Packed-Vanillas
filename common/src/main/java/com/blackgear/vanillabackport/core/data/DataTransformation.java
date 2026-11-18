@@ -1,7 +1,7 @@
 //package com.blackgear.vanillabackport.core.data;
 //
-//import com.blackgear.platform.common.data.DataTransformer;
-//import com.blackgear.platform.core.Environment;
+//import com.blackgear.vanillabackport.internal.platform.common.data.DataTransformer;
+//import com.blackgear.vanillabackport.internal.platform.core.Environment;
 //import net.minecraft.resources.ResourceLocation;
 //
 //import java.util.List;

@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.common.level.entities.mob.animal.cat;
 
-import com.blackgear.platform.core.BuiltInCoreRegistry;
-import com.blackgear.platform.core.api.RegistryKey;
+import com.blackgear.vanillabackport.internal.platform.core.BuiltInCoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.api.RegistryKey;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.ClientAsset;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.SpawnPrioritySelectors;
 import com.blackgear.vanillabackport.core.VanillaBackport;

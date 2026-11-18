@@ -1,8 +1,8 @@
 package com.blackgear.vanillabackport.common.integrations.worldgen;
 
-import com.blackgear.platform.common.worldgen.placement.BiomePlacement;
-import com.blackgear.platform.common.worldgen.placement.Placement;
-import com.blackgear.platform.common.worldgen.placement.parameters.*;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.placement.BiomePlacement;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.placement.Placement;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.placement.parameters.*;
 import com.blackgear.vanillabackport.common.registries.worldgen.ModBiomes;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.mojang.datafixers.util.Pair;

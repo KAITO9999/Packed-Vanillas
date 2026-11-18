@@ -8,8 +8,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'vanillabackport'
+rootProject.name = 'packed-vanillas'
 
 include 'common'
-include 'fabric'
 include 'forge'

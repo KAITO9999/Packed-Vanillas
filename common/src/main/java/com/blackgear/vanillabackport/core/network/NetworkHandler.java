@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.core.network;
 
-import com.blackgear.platform.core.network.NetworkChannel;
-import com.blackgear.platform.core.network.base.NetworkDirection;
+import com.blackgear.vanillabackport.internal.platform.core.network.NetworkChannel;
+import com.blackgear.vanillabackport.internal.platform.core.network.base.NetworkDirection;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 
 public class NetworkHandler {

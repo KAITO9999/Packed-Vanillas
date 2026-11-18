@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.worldgen;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.common.level.worldgen.features.*;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.core.registries.Registries;

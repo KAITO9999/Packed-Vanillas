@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations.interactions;
 
-import com.blackgear.platform.common.integration.MobInteraction;
+import com.blackgear.vanillabackport.internal.platform.common.integration.MobInteraction;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.happy_ghast.HappyGhast;
 import com.blackgear.vanillabackport.core.data.tags.ModItemTags;
 import net.minecraft.world.InteractionHand;

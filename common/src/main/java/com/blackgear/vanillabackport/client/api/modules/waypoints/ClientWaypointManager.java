@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.api.modules.waypoints;
 
-import com.blackgear.platform.client.event.screen.HudInteractions;
+import com.blackgear.vanillabackport.internal.platform.client.event.screen.HudInteractions;
 import com.blackgear.vanillabackport.client.api.modules.waypoints.provider.CardinalWaypointProvider;
 import com.blackgear.vanillabackport.client.api.modules.waypoints.provider.ItemWaypointProvider;
 import com.blackgear.vanillabackport.client.api.modules.waypoints.provider.WaypointProvider;

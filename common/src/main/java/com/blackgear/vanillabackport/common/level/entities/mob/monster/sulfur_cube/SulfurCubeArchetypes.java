@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.common.level.entities.mob.monster.sulfur_cube;
 
-import com.blackgear.platform.core.BuiltInCoreRegistry;
-import com.blackgear.platform.core.api.RegistryKey;
+import com.blackgear.vanillabackport.internal.platform.core.BuiltInCoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.api.RegistryKey;
 import com.blackgear.vanillabackport.client.registries.ModSoundEvents;
 import com.blackgear.vanillabackport.common.level.entities.mob.monster.sulfur_cube.SulfurCubeArchetype.AttributeEntry;
 import com.blackgear.vanillabackport.common.registries.entities.ModAttributes;

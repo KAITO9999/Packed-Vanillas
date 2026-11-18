@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.client.integrations;
 
-import com.blackgear.platform.common.v2.creative_tabs.CreativeTabIntegrations.Event;
-import com.blackgear.platform.common.v2.creative_tabs.VanillaTabs;
+import com.blackgear.vanillabackport.internal.platform.common.v2.creative_tabs.CreativeTabIntegrations.Event;
+import com.blackgear.vanillabackport.internal.platform.common.v2.creative_tabs.VanillaTabs;
 import com.blackgear.vanillabackport.common.registries.blocks.ModBlocks;
 import com.blackgear.vanillabackport.common.registries.items.ModItems;
 import com.blackgear.vanillabackport.core.ModChecker;

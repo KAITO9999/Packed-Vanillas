@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.items;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

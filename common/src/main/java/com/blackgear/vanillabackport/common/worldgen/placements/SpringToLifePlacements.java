@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.worldgen.placements;
 
-import com.blackgear.platform.core.api.registrar.bootstrap.PlacedFeatureRegistrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.bootstrap.PlacedFeatureRegistrar;
 import com.blackgear.vanillabackport.common.registries.blocks.ModBlocks;
 import com.blackgear.vanillabackport.common.worldgen.features.SpringToLifeFeatures;
 import com.blackgear.vanillabackport.core.VanillaBackport;

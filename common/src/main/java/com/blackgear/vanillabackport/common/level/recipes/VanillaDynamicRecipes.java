@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.level.recipes;
 
-import com.blackgear.platform.common.v2.recipe.DynamicRecipeProvider;
+import com.blackgear.vanillabackport.internal.platform.common.v2.recipe.DynamicRecipeProvider;
 import com.blackgear.vanillabackport.common.registries.blocks.ModBlocks;
 import com.blackgear.vanillabackport.common.registries.items.ModItems;
 import com.blackgear.vanillabackport.core.VanillaBackport;

@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.integrations;
 
-import com.blackgear.platform.common.item.ItemPropertyRegistry;
+import com.blackgear.vanillabackport.internal.platform.common.item.ItemPropertyRegistry;
 import com.blackgear.vanillabackport.common.registries.items.ModItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

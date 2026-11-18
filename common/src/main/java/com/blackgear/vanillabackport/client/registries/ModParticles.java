@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.registries;
 
-import com.blackgear.platform.core.helper.ParticleRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.ParticleRegistry;
 import com.blackgear.vanillabackport.client.level.particle.particleoptions.ColorParticleOption;
 import com.blackgear.vanillabackport.client.level.particle.particleoptions.GeyserBaseParticleOptions;
 import com.blackgear.vanillabackport.client.level.particle.particleoptions.GeyserParticleOptions;

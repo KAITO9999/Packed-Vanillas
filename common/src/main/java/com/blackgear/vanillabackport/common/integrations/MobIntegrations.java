@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations;
 
-import com.blackgear.platform.common.integration.v2.spawn_placement.SpawnPlacementStrategy;
+import com.blackgear.vanillabackport.internal.platform.common.integration.v2.spawn_placement.SpawnPlacementStrategy;
 import com.blackgear.vanillabackport.common.integrations.interactions.GhastHarnessInteraction;
 import com.blackgear.vanillabackport.common.integrations.interactions.LeashIntegration;
 import com.blackgear.vanillabackport.common.integrations.interactions.ShearEquipmentInteraction;
@@ -31,7 +31,7 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.item.crafting.Ingredient;
 
-import static com.blackgear.platform.common.integration.MobIntegration.*;
+import static com.blackgear.vanillabackport.internal.platform.common.integration.MobIntegration.*;
 import static net.minecraft.world.entity.SpawnPlacements.*;
 import static net.minecraft.world.level.levelgen.Heightmap.*;
 

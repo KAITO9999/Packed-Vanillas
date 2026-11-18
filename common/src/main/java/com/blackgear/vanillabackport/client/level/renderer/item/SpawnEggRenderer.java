@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.client.level.renderer.item;
 
-import com.blackgear.platform.client.v2.render.DynamicItemRenderer;
-import com.blackgear.platform.core.util.event.ResultHolder;
+import com.blackgear.vanillabackport.internal.platform.client.v2.render.DynamicItemRenderer;
+import com.blackgear.vanillabackport.internal.platform.core.util.event.ResultHolder;
 import com.blackgear.vanillabackport.common.registries.items.ModItems;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.google.common.collect.ImmutableSet;

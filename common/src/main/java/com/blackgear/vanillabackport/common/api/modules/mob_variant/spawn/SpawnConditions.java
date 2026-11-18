@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn;
 
-import com.blackgear.platform.core.api.registrar.Registrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.Registrar;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.check.BiomeCheck;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.check.MoonBrightnessCheck;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.check.StructureCheck;

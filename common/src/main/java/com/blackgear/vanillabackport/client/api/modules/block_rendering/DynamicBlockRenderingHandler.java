@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.api.modules.block_rendering;
 
-import com.blackgear.platform.core.util.config.ConfigBuilder;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ConfigBuilder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;

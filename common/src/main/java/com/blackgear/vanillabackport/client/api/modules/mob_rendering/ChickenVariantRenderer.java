@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.client.api.modules.mob_rendering;
 
-import com.blackgear.platform.core.BuiltInCoreRegistry;
-import com.blackgear.platform.core.api.RegistryKey;
+import com.blackgear.vanillabackport.internal.platform.core.BuiltInCoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.api.RegistryKey;
 import com.blackgear.vanillabackport.client.level.model.entity.chicken.ColdChickenModel;
 import com.blackgear.vanillabackport.client.registries.ModModelLayers;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.chicken.ChickenVariant;

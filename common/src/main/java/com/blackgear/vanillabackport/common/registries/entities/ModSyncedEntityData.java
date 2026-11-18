@@ -1,8 +1,8 @@
 package com.blackgear.vanillabackport.common.registries.entities;
 
-import com.blackgear.platform.common.data.entity.SyncedDataKey;
-import com.blackgear.platform.common.data.entity.SyncedDataKey.SyncMode;
-import com.blackgear.platform.core.api.RegistryKey;
+import com.blackgear.vanillabackport.internal.platform.common.data.entity.SyncedDataKey;
+import com.blackgear.vanillabackport.internal.platform.common.data.entity.SyncedDataKey.SyncMode;
+import com.blackgear.vanillabackport.internal.platform.core.api.RegistryKey;
 import com.blackgear.vanillabackport.common.api.modules.sound_variant.WolfSoundVariant;
 import com.blackgear.vanillabackport.common.api.modules.sound_variant.WolfSoundVariants;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.cat.CatDataVariant;

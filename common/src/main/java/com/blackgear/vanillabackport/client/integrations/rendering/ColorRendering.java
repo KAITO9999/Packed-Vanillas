@@ -10,7 +10,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.GrassColor;
 
-import static com.blackgear.platform.client.GameRendering.*;
+import static com.blackgear.vanillabackport.internal.platform.client.GameRendering.*;
 
 @Environment(EnvType.CLIENT)
 public class ColorRendering {

@@ -1,8 +1,8 @@
 package com.blackgear.vanillabackport.core.network;
 
-import com.blackgear.platform.core.network.base.Packet;
-import com.blackgear.platform.core.network.base.PacketContext;
-import com.blackgear.platform.core.network.base.PacketHandler;
+import com.blackgear.vanillabackport.internal.platform.core.network.base.Packet;
+import com.blackgear.vanillabackport.internal.platform.core.network.base.PacketContext;
+import com.blackgear.vanillabackport.internal.platform.core.network.base.PacketHandler;
 import com.blackgear.vanillabackport.client.api.modules.waypoints.ClientWaypointManager;
 import com.blackgear.vanillabackport.common.api.modules.waypoints.TrackedWaypoint;
 import com.blackgear.vanillabackport.common.api.modules.waypoints.TrackedWaypointManager;

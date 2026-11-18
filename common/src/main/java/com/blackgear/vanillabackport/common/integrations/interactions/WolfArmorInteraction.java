@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations.interactions;
 
-import com.blackgear.platform.common.integration.MobInteraction;
+import com.blackgear.vanillabackport.internal.platform.common.integration.MobInteraction;
 import com.blackgear.vanillabackport.client.registries.ModSoundEvents;
 import com.blackgear.vanillabackport.common.registries.items.ModItems;
 import net.minecraft.world.InteractionHand;

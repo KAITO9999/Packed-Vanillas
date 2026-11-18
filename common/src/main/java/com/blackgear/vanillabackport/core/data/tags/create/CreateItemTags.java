@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.core.data.tags.create;
 
-import com.blackgear.platform.common.data.TagRegistry;
+import com.blackgear.vanillabackport.internal.platform.common.data.TagRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;

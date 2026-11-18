@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations;
 
-import com.blackgear.platform.common.integration.BlockIntegration.Event;
+import com.blackgear.vanillabackport.internal.platform.common.integration.BlockIntegration.Event;
 import com.blackgear.vanillabackport.common.integrations.dispenser.ArmadilloBrushDispenseBehavior;
 import com.blackgear.vanillabackport.common.integrations.dispenser.BoatDispenseBehavior;
 import com.blackgear.vanillabackport.common.integrations.dispenser.EggVariantProjectileDispenseBehavior;

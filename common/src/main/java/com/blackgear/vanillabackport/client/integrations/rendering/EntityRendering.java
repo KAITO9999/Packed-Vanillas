@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.integrations.rendering;
 
-import com.blackgear.platform.client.event.rendering.LivingEntityRendererCallback.LayerAppender;
+import com.blackgear.vanillabackport.internal.platform.client.event.rendering.LivingEntityRendererCallback.LayerAppender;
 import com.blackgear.vanillabackport.client.api.modules.mob_rendering.RenderConditions;
 import com.blackgear.vanillabackport.client.api.modules.mob_rendering.SpecialMobRenderer;
 import com.blackgear.vanillabackport.client.level.layer.SheepWoolUndercoatLayer;
@@ -36,7 +36,7 @@ import net.minecraft.client.renderer.entity.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 
-import static com.blackgear.platform.client.GameRendering.*;
+import static com.blackgear.vanillabackport.internal.platform.client.GameRendering.*;
 
 @Environment(EnvType.CLIENT)
 public class EntityRendering {

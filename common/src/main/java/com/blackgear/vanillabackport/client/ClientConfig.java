@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client;
 
-import com.blackgear.platform.core.util.config.ConfigBuilder;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ConfigBuilder;
 
 public class ClientConfig {
     // Bats and Pots

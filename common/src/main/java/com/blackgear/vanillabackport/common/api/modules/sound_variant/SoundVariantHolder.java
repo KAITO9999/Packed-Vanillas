@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.api.modules.sound_variant;
 
-import com.blackgear.platform.core.BuiltInCoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.BuiltInCoreRegistry;
 import net.minecraft.world.entity.LivingEntity;
 
 public interface SoundVariantHolder<T> {

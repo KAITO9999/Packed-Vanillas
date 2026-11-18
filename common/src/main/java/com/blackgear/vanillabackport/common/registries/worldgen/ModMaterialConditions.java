@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.worldgen;
 
-import com.blackgear.platform.core.api.registrar.Registrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.Registrar;
 import com.blackgear.vanillabackport.common.level.worldgen.surface.SpatialNoiseThresholdConditionSource;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.mojang.serialization.Codec;

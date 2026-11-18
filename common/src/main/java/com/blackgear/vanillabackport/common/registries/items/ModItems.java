@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.items;
 
-import com.blackgear.platform.core.helper.ItemRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.ItemRegistry;
 import com.blackgear.vanillabackport.client.registries.ModSoundEvents;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.chicken.ChickenVariants;
 import com.blackgear.vanillabackport.common.level.items.*;

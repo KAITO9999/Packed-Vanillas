@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.registries;
 
-import com.blackgear.platform.core.helper.SoundRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.SoundRegistry;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;

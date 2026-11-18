@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.blocks;
 
-import com.blackgear.platform.common.block.WoodTypeRegistry;
+import com.blackgear.vanillabackport.internal.platform.common.block.WoodTypeRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;

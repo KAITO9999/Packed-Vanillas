@@ -1,4 +1,4 @@
-# Packed-Vanillas — initial static audit
+# Packed-Vanillas — static audit and implementation log
 
 ## Target and provenance
 
@@ -7,26 +7,28 @@
 - Upstream mod version: `1.2.2`
 - Target: Minecraft 1.20.1 / Forge 47.x
 - Fork: `KAITO9999/Packed-Vanillas`
-- Working branch: `packed/initial-audit`
+- Working branch: `packed/platform-internalization`
 - Local checkout: `~/src/Packed-Vanillas`
 - Upstream remote: `https://github.com/ItsBlackGear/VanillaBackport.git`
 - Origin remote: `https://github.com/KAITO9999/Packed-Vanillas.git`
 
-The Forge mod id and the `minecraft` resource/data namespace are intentionally retained as `vanillabackport` for world, registry, and existing resource compatibility. The display name/artifact name can become `Packed-Vanillas` without gratuitously changing persisted identifiers.
+The Forge mod id and the `minecraft` resource/data namespace are intentionally retained as `vanillabackport` for world, registry, and existing resource compatibility. The display name/artifact name becomes `Packed-Vanillas` without gratuitously changing persisted identifiers.
 
 ## Static inventory
 
+Before vendoring:
+
 - 702 Java source files across the common and Forge source sets.
-- 153 Mixin source files (count from source tree; includes common/client/compat groups).
+- 153 Mixin source files (common/client/compat groups).
 - 2,620 resource files under the inspected common/Forge resource trees.
 - 136 source files import Platform APIs, with 213 direct Platform imports.
 - Platform API imports span `core`, `client`, and `common`; this is not a two-line Gradle dependency removal.
 
 ## Platform dependency findings
 
-The upstream project has Platform dependencies in both `common/build.gradle` and `forge/build.gradle`, currently versioned through `platform_indev_version=1.4.2`. Forge `mods.toml` declares `platform` as a mandatory runtime mod.
+The upstream project had Platform dependencies in both `common/build.gradle` and `forge/build.gradle`, versioned through `platform_indev_version=1.4.2`. Forge `mods.toml` declared `platform` as a mandatory runtime mod. A clean GitHub Actions checkout confirmed that the upstream build was not reproducible: Gradle failed because `flatDir:Platform-common-1.20.1-1.4.2` resolved to the absent absolute path `/libs/Platform-common-1.20.1-1.4.2.jar`.
 
-The code uses Platform for:
+Platform was used for:
 
 - bootstrap/lifecycle and environment detection;
 - config registration/loading;
@@ -38,13 +40,45 @@ The code uses Platform for:
 - loot modifier and data/resource reload integration;
 - creative tab and rendering integration APIs.
 
-A simple Gradle dependency deletion would leave unresolved imports and, more importantly, silently remove event pipelines used by the mod. The preferred no-external-prerequisite route is to vendor the required Platform common + Forge source as an internal implementation, relocate its Java package to `com.blackgear.vanillabackport.internal.platform`, integrate its bootstrap into the existing Forge entrypoint, and retarget its Forge event subscribers to the existing `vanillabackport` mod id. Do not include Platform's separate `@Mod` entrypoint or `mods.toml`; Packed-Vanillas remains the only installed mod. Preserve the upstream Platform MIT notice and attribution when vendoring.
+A simple Gradle dependency deletion would leave unresolved imports and, more importantly, silently remove event pipelines used by the mod.
 
-The Platform helper's `Platform.resource()` namespace and any existing `platform:` internal identifiers must be audited separately before changing them. Do not mass-rewrite persisted resource identifiers as part of package relocation.
+### Current internalization state
+
+The working branch now vendors 202 Platform common + Forge Java source files under `com.blackgear.vanillabackport.internal.platform` and removes the separate Platform mod requirement.
+
+Completed locally:
+
+- Relocated Platform Java packages and all VanillaBackport imports.
+- Excluded Platform's separate `@Mod` entrypoint and metadata.
+- Retargeted all 8 Platform Forge event-subscriber classes to `vanillabackport`.
+- Called the internal Platform bootstrap from the existing Forge entrypoint before VanillaBackport's own bootstrap.
+- Added Platform common/Forge Mixin configs to Forge's Mixin registration.
+- Merged Platform's access-widener declarations into the existing VanillaBackport access widener.
+- Removed Platform artifacts from both Gradle projects and removed the absolute `/libs` repository.
+- Removed the Fabric project from this Forge-only fork's Gradle settings.
+- Preserved the original mod id, resource/data namespaces, and `platform:` internal resource identifiers.
+- Included the vendored Platform MIT notice in `LICENSES/Platform-MIT.txt`.
+
+The Platform API is now internal source, not a separate download or runtime mod. Its internal resource namespace remains `platform:` where used by the vendored networking/biome-modifier implementation; this is distinct from a required mod id.
+
+### Static checks
+
+A Termux static-check script currently passes 26/26 assertions:
+
+- no old `com.blackgear.platform` package references;
+- all 202 vendored Java files have package/path agreement;
+- no separate Platform `@Mod` entrypoint;
+- all 8 event subscribers use `vanillabackport`;
+- all four configured Mixin files resolve their classes;
+- no Platform dependency remains in `mods.toml` or Gradle coordinates;
+- internal bootstrap, Mixin configs, access widener, and MIT notice are present;
+- Forge-only target and original mod id are preserved.
+
+This is static validation, not a compile or runtime pass. A GitHub Actions compile of the internalized branch is still required.
 
 ## Resource-pack compatibility: 1.20.1 vs modern packs
 
-Minecraft 1.20.1 uses resource-pack format 15. Modern resource packs have moved far beyond that format. Relevant documented changes include:
+Minecraft 1.20.1 uses resource-pack format 15. Modern resource packs have moved far beyond that format. Relevant changes to account for:
 
 - 1.21.4: item model definitions under `assets/<namespace>/items/`.
 - 1.21.6: strict JSON parsing for resource-pack JSON.
@@ -96,15 +130,22 @@ Inspected `~/mc-test-kit/README.md`, `REQUEST.txt`, `PROVENANCE.txt`, `package.j
 - `java-jar`: ZIP integrity plus common Fabric/Quilt/Forge metadata detection.
 - `java-project`: invokes Gradle `test` and `build`; it executes project Gradle scripts and is not a static source analyzer.
 - It does not currently validate Mixin targets, runtime event wiring, resource-pack format conversions, or rendered output.
-- Its installed Node test suite passed 6/6 tests on this audit run.
+- Its installed Node test suite passed 6/6 tests on the audit run.
+- Termux's build-plan gate blocked a local Forge compile because the project scan was incomplete and the estimated artifact size was unknown; it directed this project to GitHub Actions or a cloud build host.
 
-Use source inspection/search for static audit, `mc-test java-project` for Gradle validation only in an approved build route, and `mc-test java-jar` for final artifact integrity/metadata checks. Build/compile work on Termux is routed through the Termux build-plan gate; unknown/large builds should use GitHub Actions or a cloud build host.
+### CI baseline findings
 
-## Initial implementation order
+The initial workflow exposed two upstream repository issues:
 
-1. Establish a clean baseline CI path; do not treat source inspection as a build pass.
-2. Internalize Platform APIs and remove the external `platform` dependency while preserving event pipelines and registry/network behavior.
-3. Rename the user-facing mod/artifact to Packed-Vanillas while retaining `modId=vanillabackport` and existing data/resource namespaces.
-4. Implement and test the waypoint render-order cache.
-5. Implement resource-pack metadata normalization and the supported modern item-model/atlas conversion subset with fixtures.
-6. Only then evaluate larger Mixin/config compatibility removals or deeper optimizations.
+1. The checked-in Gradle wrapper JAR is missing and the wrapper script is not executable. The CI workflow therefore installs Gradle 8.14.4 directly with `gradle/actions/setup-gradle`.
+2. With Gradle available, the unmodified upstream project still fails at dependency resolution because the Platform common JAR is expected at `/libs/Platform-common-1.20.1-1.4.2.jar`, which is not part of a clean checkout.
+
+The second failure is the reproducibility defect the internal-source approach is intended to remove. The post-internalization CI result is pending.
+
+## Remaining implementation order
+
+1. Obtain a clean GitHub Actions compile of the internalized Platform branch; fix source/dependency errors before feature work.
+2. Run the existing `mc-test java-project` path only through an approved build route and use `mc-test java-jar` on the produced artifact.
+3. Implement and test the waypoint render-order cache.
+4. Implement resource-pack metadata normalization and the supported modern item-model/atlas conversion subset with fixtures.
+5. Only then evaluate larger Mixin/config compatibility removals or deeper optimizations.

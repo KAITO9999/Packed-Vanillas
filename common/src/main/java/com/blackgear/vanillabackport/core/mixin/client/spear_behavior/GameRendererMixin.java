@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.core.mixin.client.spear_behavior;
 
-import com.blackgear.platform.common.entity.ReachAttributes;
+import com.blackgear.vanillabackport.internal.platform.common.entity.ReachAttributes;
 import com.blackgear.vanillabackport.common.level.items.spear.AttackRange;
 import com.blackgear.vanillabackport.core.ModChecker;
 import net.minecraft.client.Minecraft;

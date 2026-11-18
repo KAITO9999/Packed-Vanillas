@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.common.commands.arguments.ColorArgument;
 import com.blackgear.vanillabackport.common.commands.arguments.HexColorArgument;
 import com.blackgear.vanillabackport.core.VanillaBackport;

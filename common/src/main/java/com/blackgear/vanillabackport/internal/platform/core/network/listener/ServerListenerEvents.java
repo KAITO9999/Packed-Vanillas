@@ -1,0 +1,11 @@
+package com.blackgear.vanillabackport.internal.platform.core.network.listener;
+
+import com.blackgear.vanillabackport.internal.platform.core.util.event.Event;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
+
+public interface ServerListenerEvents {
+    Event<ServerListenerEvents> JOIN = Event.create(ServerListenerEvents.class);
+
+    void listener(ServerGamePacketListenerImpl connection, MinecraftServer player);
+}

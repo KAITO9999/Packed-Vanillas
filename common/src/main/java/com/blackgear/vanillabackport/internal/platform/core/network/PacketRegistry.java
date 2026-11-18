@@ -1,0 +1,40 @@
+package com.blackgear.vanillabackport.internal.platform.core.network;
+
+import com.blackgear.vanillabackport.internal.platform.core.network.base.Packet;
+import com.blackgear.vanillabackport.internal.platform.core.network.base.PacketHandler;
+import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+
+public class PacketRegistry {
+    @ExpectPlatform
+    public static void registerChannel(ResourceLocation channel, int version) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T extends Packet<T>> void registerClientbound(ResourceLocation channel, ResourceLocation id, PacketHandler<T> handler, Class<T> packet) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T extends Packet<T>> void registerServerbound(ResourceLocation channel, ResourceLocation id, PacketHandler<T> handler, Class<T> packet) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T extends Packet<T>> void sendToServer(ResourceLocation id, T packet) {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
+    public static <T extends Packet<T>> void sendToPlayer(ResourceLocation id, T packet, Player player) {
+        throw new AssertionError();
+    }
+    
+    @ExpectPlatform
+    public static <T extends Packet<T>> void sendToPlayersTrackingEntity(ResourceLocation name, T packet, Entity entity) {
+        throw new AssertionError();
+    }
+}

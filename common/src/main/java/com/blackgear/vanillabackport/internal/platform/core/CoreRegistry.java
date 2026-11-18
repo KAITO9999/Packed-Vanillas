@@ -1,0 +1,113 @@
+package com.blackgear.vanillabackport.internal.platform.core;
+
+import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+/**
+ * A platform-agnostic registry wrapper providing consistent registration across Forge and Fabric.
+ * @param <T> The type of objects being registered
+ */
+public abstract class CoreRegistry<T> {
+    protected final String modId;
+    protected boolean isPresent = false;
+
+    protected CoreRegistry(String modId) {
+        this.modId = modId;
+    }
+
+    @ExpectPlatform
+    public static <T> void register(ResourceKey<Registry<T>> registry, Consumer<BiConsumer<T, ResourceLocation>> source) {
+        throw new AssertionError();
+    }
+
+    /**
+     * Creates a registry for the given registry key and mod ID.
+     * @param key The registry key
+     * @param modId The mod ID
+     * @return A platform-specific registry implementation
+     */
+    @ExpectPlatform
+    public static <T> CoreRegistry<T> create(ResourceKey<? extends Registry<T>> key, String modId) {
+        throw new AssertionError();
+    }
+
+    /**
+     * Creates a registry for the given registry and mod ID.
+     * @param registry The registry
+     * @param modId The mod ID
+     * @return A platform-specific registry implementation
+     */
+    @ExpectPlatform
+    public static <T> CoreRegistry<T> create(Registry<T> registry, String modId) {
+        throw new AssertionError();
+    }
+
+    /**
+     * Registers an entry with the given name.
+     * @param name The registry name
+     * @param entry The entry supplier
+     * @return A supplier for the registered entry
+     */
+    public abstract <E extends T> Supplier<E> register(String name, Supplier<E> entry);
+
+    public abstract <E extends T> Holder<T> holder(String name, Supplier<E> entry);
+
+    /**
+     * Registers an entry and returns its ResourceKey.
+     * @param name The registry name
+     * @param entry The entry supplier
+     * @return The ResourceKey for the registered entry
+     */
+    public <E extends T> ResourceKey<T> resource(String name, Supplier<E> entry) {
+        return this.resource(name, key -> entry);
+    }
+    
+    public <E extends T> ResourceKey<T> resource(String name, Function<ResourceKey<T>, Supplier<E>> entry) {
+        ResourceKey<T> key = ResourceKey.create(this.key(), new ResourceLocation(this.modId, name));
+        this.register(name, entry.apply(key));
+        return key;
+    }
+
+    /**
+     * @return The registry key
+     */
+    public abstract ResourceKey<? extends Registry<T>> key();
+
+    /**
+     * @return The underlying Minecraft registry
+     */
+    public abstract Registry<T> registry();
+
+    /**
+     * @return The mod ID
+     */
+    public String modId() {
+        return this.modId;
+    }
+
+    /**
+     * Registers this registry with the platform.
+     * Throws if called multiple times.
+     */
+    public void register() {
+        if (this.isPresent) {
+            throw new IllegalArgumentException("Duplication of Registry: " + this.key());
+        }
+        
+        this.isPresent = true;
+        this.bootstrap();
+    }
+
+    /**
+     * Platform-specific bootstrap logic
+     */
+    protected abstract void bootstrap();
+}

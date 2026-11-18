@@ -6,7 +6,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.FlameParticle;
 
-import static com.blackgear.platform.client.GameRendering.*;
+import static com.blackgear.vanillabackport.internal.platform.client.GameRendering.*;
 
 @Environment(EnvType.CLIENT)
 public class ParticleRendering {

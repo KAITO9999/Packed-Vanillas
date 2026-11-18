@@ -1,8 +1,8 @@
 package com.blackgear.vanillabackport.common.worldgen;
 
-import com.blackgear.platform.common.worldgen.modifier.BiomeContext;
-import com.blackgear.platform.common.worldgen.modifier.BiomeWriter;
-import com.blackgear.platform.common.worldgen.modifier.FeatureManager;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.modifier.BiomeContext;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.modifier.BiomeWriter;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.modifier.FeatureManager;
 import com.blackgear.vanillabackport.common.registries.entities.ModEntityTypes;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.blackgear.vanillabackport.core.data.tags.ModBiomeTags;

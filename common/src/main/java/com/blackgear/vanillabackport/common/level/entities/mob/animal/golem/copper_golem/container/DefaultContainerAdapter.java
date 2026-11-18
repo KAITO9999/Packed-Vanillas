@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.level.entities.mob.animal.golem.copper_golem.container;
 
-import com.blackgear.platform.core.Environment;
+import com.blackgear.vanillabackport.internal.platform.core.Environment;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.LivingEntity;

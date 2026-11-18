@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.entities;
 
-import com.blackgear.platform.core.helper.DataSerializerRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.DataSerializerRegistry;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.armadillo.ArmadilloState;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.golem.copper_golem.CopperGolemState;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.golem.copper_golem.WeatheredState;

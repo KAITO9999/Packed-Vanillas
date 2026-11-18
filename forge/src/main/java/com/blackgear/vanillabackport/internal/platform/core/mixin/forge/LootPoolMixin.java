@@ -1,0 +1,24 @@
+package com.blackgear.vanillabackport.internal.platform.core.mixin.forge;
+
+import com.blackgear.vanillabackport.internal.platform.common.data.forge.LootPoolAccess;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.Shadow;
+
+@Mixin(LootPool.class)
+public class LootPoolMixin implements LootPoolAccess {
+    @Mutable @Shadow @Final LootPoolEntryContainer[] entries;
+
+    @Override
+    public LootPoolEntryContainer[] platform$getEntries() {
+        return this.entries;
+    }
+
+    @Override
+    public void platform$setEntries(LootPoolEntryContainer[] entries) {
+        this.entries = entries;
+    }
+}

@@ -1,14 +1,14 @@
 package com.blackgear.vanillabackport.client;
 
-import com.blackgear.platform.client.GameRendering;
-import com.blackgear.platform.client.event.LocalPlayerEvents;
-import com.blackgear.platform.client.event.rendering.LivingEntityRendererCallback;
-import com.blackgear.platform.common.block.WoodTypeRegistry;
-import com.blackgear.platform.common.events.TickEvents;
-import com.blackgear.platform.common.v2.creative_tabs.CreativeTabIntegrations;
-import com.blackgear.platform.core.ParallelDispatch;
-import com.blackgear.platform.core.events.ResourcePackManager;
-import com.blackgear.platform.core.events.ResourceReloadManager;
+import com.blackgear.vanillabackport.internal.platform.client.GameRendering;
+import com.blackgear.vanillabackport.internal.platform.client.event.LocalPlayerEvents;
+import com.blackgear.vanillabackport.internal.platform.client.event.rendering.LivingEntityRendererCallback;
+import com.blackgear.vanillabackport.internal.platform.common.block.WoodTypeRegistry;
+import com.blackgear.vanillabackport.internal.platform.common.events.TickEvents;
+import com.blackgear.vanillabackport.internal.platform.common.v2.creative_tabs.CreativeTabIntegrations;
+import com.blackgear.vanillabackport.internal.platform.core.ParallelDispatch;
+import com.blackgear.vanillabackport.internal.platform.core.events.ResourcePackManager;
+import com.blackgear.vanillabackport.internal.platform.core.events.ResourceReloadManager;
 import com.blackgear.vanillabackport.client.api.modules.block_rendering.DynamicBlockRenderingHandler;
 import com.blackgear.vanillabackport.client.api.modules.bundle_ui.BundleMouseActions;
 import com.blackgear.vanillabackport.client.api.bundled_tabs.BundledTabSelector;

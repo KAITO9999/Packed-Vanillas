@@ -1,9 +1,9 @@
 package com.blackgear.vanillabackport.client.api.bundled_tabs;
 
-import com.blackgear.platform.client.event.screen.HudInteractions;
-import com.blackgear.platform.client.event.screen.HudRendering;
-import com.blackgear.platform.client.event.screen.api.ScreenAccess;
-import com.blackgear.platform.core.util.event.CancellableResult;
+import com.blackgear.vanillabackport.internal.platform.client.event.screen.HudInteractions;
+import com.blackgear.vanillabackport.internal.platform.client.event.screen.HudRendering;
+import com.blackgear.vanillabackport.internal.platform.client.event.screen.api.ScreenAccess;
+import com.blackgear.vanillabackport.internal.platform.core.util.event.CancellableResult;
 import com.blackgear.vanillabackport.client.api.modules.bundle_ui.ScrollWheelHandler;
 import com.blackgear.vanillabackport.client.registries.ModBundledTabs;
 import com.blackgear.vanillabackport.client.registries.ModCreativeTabs;

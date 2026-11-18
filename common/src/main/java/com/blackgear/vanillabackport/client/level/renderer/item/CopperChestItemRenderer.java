@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.level.renderer.item;
 
-import com.blackgear.platform.client.v2.render.BuiltinItemRendererRegistry;
+import com.blackgear.vanillabackport.internal.platform.client.v2.render.BuiltinItemRendererRegistry;
 import com.blackgear.vanillabackport.common.level.blocks.CopperChestBlock;
 import com.blackgear.vanillabackport.common.level.block_entities.CopperChestBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;

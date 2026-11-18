@@ -1,8 +1,8 @@
 package com.blackgear.vanillabackport.client.level.renderer.item;
 
-import com.blackgear.platform.client.v2.render.ItemRendererRegistry;
-import com.blackgear.platform.core.util.config.ConfigBuilder;
-import com.blackgear.platform.core.util.event.ResultHolder;
+import com.blackgear.vanillabackport.internal.platform.client.v2.render.ItemRendererRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ConfigBuilder;
+import com.blackgear.vanillabackport.internal.platform.core.util.event.ResultHolder;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.client.renderer.ItemModelShaper;
 import net.minecraft.client.resources.model.BakedModel;

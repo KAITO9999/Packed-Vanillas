@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.level.items.spear;
 
-import com.blackgear.platform.common.entity.ReachAttributes;
+import com.blackgear.vanillabackport.internal.platform.common.entity.ReachAttributes;
 import com.blackgear.vanillabackport.common.api.extensions.entity.movement.MotionAwareEntity;
 import com.blackgear.vanillabackport.core.util.ProjectileUtils;
 import com.blackgear.vanillabackport.core.util.Utilities.DirectionUtils;

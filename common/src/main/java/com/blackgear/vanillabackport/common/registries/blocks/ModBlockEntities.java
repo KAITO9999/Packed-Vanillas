@@ -1,7 +1,7 @@
 package com.blackgear.vanillabackport.common.registries.blocks;
 
-import com.blackgear.platform.core.helper.BlockEntityRegistry;
-import com.blackgear.platform.core.helper.BlockEntityTypeBuilder;
+import com.blackgear.vanillabackport.internal.platform.core.helper.BlockEntityRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.BlockEntityTypeBuilder;
 import com.blackgear.vanillabackport.common.level.block_entities.*;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.world.level.block.entity.BlockEntityType;

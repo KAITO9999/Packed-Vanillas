@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.level.renderer.entity;
 
-import com.blackgear.platform.client.api.model.CustomBoatModel;
+import com.blackgear.vanillabackport.internal.platform.client.api.model.CustomBoatModel;
 import com.blackgear.vanillabackport.common.level.entities.boat.BoatRegistry;
 import com.blackgear.vanillabackport.common.level.entities.boat.CustomBoatBehavior;
 import com.mojang.datafixers.util.Pair;

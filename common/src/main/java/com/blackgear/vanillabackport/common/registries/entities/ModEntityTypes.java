@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.entities;
 
-import com.blackgear.platform.core.helper.EntityRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.EntityRegistry;
 import com.blackgear.vanillabackport.common.level.entities.boat.CustomBoat;
 import com.blackgear.vanillabackport.common.level.entities.boat.CustomChestBoat;
 import com.blackgear.vanillabackport.common.level.entities.decoration.Cushion;

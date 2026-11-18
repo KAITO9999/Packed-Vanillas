@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.core.registries;
 
-import com.blackgear.platform.core.RegistryBuilder;
+import com.blackgear.vanillabackport.internal.platform.core.RegistryBuilder;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.SpawnCondition;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.mojang.serialization.Codec;

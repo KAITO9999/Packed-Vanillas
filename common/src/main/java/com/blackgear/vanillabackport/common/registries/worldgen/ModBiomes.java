@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.worldgen;
 
-import com.blackgear.platform.core.api.registrar.bootstrap.BootstrapRegistrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.bootstrap.BootstrapRegistrar;
 import com.blackgear.vanillabackport.common.worldgen.biomes.ChaosCubedBiomes;
 import com.blackgear.vanillabackport.common.worldgen.biomes.TheGardenAwakensBiomes;
 import com.blackgear.vanillabackport.common.worldgen.biomes.WildernessBoundBiomes;

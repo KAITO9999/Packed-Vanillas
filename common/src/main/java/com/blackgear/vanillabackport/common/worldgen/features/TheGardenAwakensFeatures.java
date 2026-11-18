@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.worldgen.features;
 
-import com.blackgear.platform.core.api.registrar.bootstrap.ConfiguredFeatureRegistrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.bootstrap.ConfiguredFeatureRegistrar;
 import com.blackgear.vanillabackport.common.registries.blocks.ModBlocks;
 import com.blackgear.vanillabackport.common.worldgen.placements.TheGardenAwakensPlacements;
 import com.blackgear.vanillabackport.common.level.worldgen.tree.decorators.CreakingHeartDecorator;

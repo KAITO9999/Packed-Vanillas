@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.api.modules.leaf_litter;
 
-import com.blackgear.platform.common.resource.RegistryAwareJsonReloadListener;
+import com.blackgear.vanillabackport.internal.platform.common.resource.RegistryAwareJsonReloadListener;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

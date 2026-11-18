@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.client.api.modules.waypoints;
 
-import com.blackgear.platform.client.event.screen.HudRendering;
+import com.blackgear.vanillabackport.internal.platform.client.event.screen.HudRendering;
 import com.blackgear.vanillabackport.common.api.modules.waypoints.TrackedWaypoint;
 import com.blackgear.vanillabackport.common.api.modules.waypoints.TrackedWaypoint.Camera;
 import com.blackgear.vanillabackport.common.api.modules.waypoints.TrackedWaypoint.PitchDirection;

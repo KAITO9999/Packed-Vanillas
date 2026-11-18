@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.blocks;
 
-import com.blackgear.platform.core.helper.BlockRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.BlockRegistry;
 import com.blackgear.vanillabackport.client.registries.ModParticles;
 import com.blackgear.vanillabackport.client.registries.ModSoundEvents;
 import com.blackgear.vanillabackport.client.registries.ModSoundTypes;

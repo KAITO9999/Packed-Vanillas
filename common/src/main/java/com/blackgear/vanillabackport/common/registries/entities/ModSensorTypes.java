@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.entities;
 
-import com.blackgear.platform.core.helper.EntityRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.helper.EntityRegistry;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.armadillo.Armadillo;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.armadillo.MobSensor;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.happy_ghast.HappyGhast;

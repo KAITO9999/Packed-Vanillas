@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.blackgear.vanillabackport.common.value_providers.TrapezoidInt;
 import net.minecraft.core.registries.Registries;

@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.mehvahdjukaar.moonlight.api.map.type.MapDecorationType;
 import net.minecraft.core.Holder;

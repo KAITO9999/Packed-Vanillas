@@ -1,14 +1,14 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-issueTrackerURL = "https://github.com/ItsBlackGear/VanillaBackport/issues"
+issueTrackerURL = "https://github.com/KAITO9999/Packed-Vanillas/issues"
 license = "https://github.com/ItsBlackGear/VanillaBackport/blob/1.20.1/LICENSE.txt"
 
 [[mods]]
     modId = "vanillabackport"
     version = "${version}"
-    displayName = "VanillaBackport"
-    authors = "BlackGear"
-    description = "Backporting Minecraft Features to previous versions!"
+    displayName = "Packed-Vanillas"
+    authors = "BlackGear, KAITO9999"
+    description = "Modern Minecraft content backports for Forge 1.20.1."
     logoFile = "icon.png"
 
 [[dependencies.vanillabackport]]
@@ -25,13 +25,6 @@ license = "https://github.com/ItsBlackGear/VanillaBackport/blob/1.20.1/LICENSE.t
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.vanillabackport]]
-    modId = "platform"
-    mandatory = true
-    type = "required"
-    versionRange = "[1.4,)"
-    ordering = "NONE"
-    side = "BOTH"
 
 ["badoptimizations:cache_hooks"]
     common = "com.blackgear.vanillabackport.client.api.modules.end_flashes.BadOptimizationsCommonHook"

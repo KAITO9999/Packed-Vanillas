@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations;
 
-import com.blackgear.platform.common.integration.TradeIntegration;
+import com.blackgear.vanillabackport.internal.platform.common.integration.TradeIntegration;
 import com.blackgear.vanillabackport.common.registries.blocks.ModBlocks;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.minecraft.world.entity.npc.VillagerTrades;

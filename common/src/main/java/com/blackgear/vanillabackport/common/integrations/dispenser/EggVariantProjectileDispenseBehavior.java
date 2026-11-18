@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations.dispenser;
 
-import com.blackgear.platform.core.api.RegistryKey;
+import com.blackgear.vanillabackport.internal.platform.core.api.RegistryKey;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.VariantDataHolder;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.VariantUtils;
 import com.blackgear.vanillabackport.common.level.entities.mob.animal.chicken.ChickenVariant;

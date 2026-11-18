@@ -1,9 +1,9 @@
 package com.blackgear.vanillabackport.common.api.modules.mob_variant;
 
-import com.blackgear.platform.common.data.entity.SyncedDataHolder;
-import com.blackgear.platform.common.data.entity.SyncedDataKey;
-import com.blackgear.platform.core.BuiltInCoreRegistry;
-import com.blackgear.platform.core.api.RegistryKey;
+import com.blackgear.vanillabackport.internal.platform.common.data.entity.SyncedDataHolder;
+import com.blackgear.vanillabackport.internal.platform.common.data.entity.SyncedDataKey;
+import com.blackgear.vanillabackport.internal.platform.core.BuiltInCoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.api.RegistryKey;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.PriorityProvider;
 import com.blackgear.vanillabackport.common.api.modules.mob_variant.spawn.SpawnContext;
 import com.blackgear.vanillabackport.common.api.modules.sound_variant.SoundVariantHolder;

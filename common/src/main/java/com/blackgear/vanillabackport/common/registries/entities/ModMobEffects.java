@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.entities;
 
-import com.blackgear.platform.core.api.registrar.Registrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.Registrar;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.blackgear.vanillabackport.core.mixin.common.access.MobEffectAccessor;
 import net.minecraft.core.registries.Registries;

@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.worldgen.structures;
 
-import com.blackgear.platform.core.api.registrar.bootstrap.BootstrapRegistrar;
+import com.blackgear.vanillabackport.internal.platform.core.api.registrar.bootstrap.BootstrapRegistrar;
 import com.blackgear.vanillabackport.common.level.worldgen.structure.AbandonedCampStructurePools;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.blackgear.vanillabackport.core.data.tags.ModBiomeTags;

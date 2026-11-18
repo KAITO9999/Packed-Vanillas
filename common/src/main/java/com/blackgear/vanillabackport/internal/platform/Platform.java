@@ -1,0 +1,48 @@
+package com.blackgear.vanillabackport.internal.platform;
+
+import com.blackgear.vanillabackport.internal.platform.common.CommonSetup;
+import com.blackgear.vanillabackport.internal.platform.common.data.entity.SyncedEntityDataContainer;
+import com.blackgear.vanillabackport.internal.platform.common.resource.RegistryAwareJsonReloadListener;
+import com.blackgear.vanillabackport.internal.platform.common.worldgen.modifier.BiomeManager;
+import com.blackgear.vanillabackport.internal.platform.core.ModInstance;
+import com.blackgear.vanillabackport.internal.platform.core.network.NetworkChannel;
+import com.blackgear.vanillabackport.internal.platform.core.network.base.NetworkDirection;
+import com.blackgear.vanillabackport.internal.platform.core.network.packets.ClientboundEntityDataPacket;
+import com.blackgear.vanillabackport.internal.platform.core.util.config.ConfigLoader;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.resources.ResourceLocation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Platform {
+	public static final String MOD_ID = "platform";
+	public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+	public static final NetworkChannel NETWORKING = new NetworkChannel(Platform.MOD_ID, 2, "networking");
+	public static final ModInstance INSTANCE = ModInstance.create(MOD_ID)
+		.common(CommonSetup::setup)
+		.build();
+
+	public static void bootstrap() {
+		INSTANCE.bootstrap();
+
+		NETWORKING.registerPacket(
+			NetworkDirection.CLIENTBOUND,
+			ClientboundEntityDataPacket.ID,
+			ClientboundEntityDataPacket.HANDLER,
+			ClientboundEntityDataPacket.class
+		);
+		
+		ConfigLoader.bootstrap();
+		BiomeManager.bootstrap();
+		
+		SyncedEntityDataContainer.bootstrap();
+	}
+
+	public static void afterDataReload(RegistryAccess registryAccess, boolean client) {
+		RegistryAwareJsonReloadListener.runReloads(registryAccess);
+	}
+
+	public static ResourceLocation resource(String path) {
+		return new ResourceLocation(MOD_ID, path);
+	}
+}

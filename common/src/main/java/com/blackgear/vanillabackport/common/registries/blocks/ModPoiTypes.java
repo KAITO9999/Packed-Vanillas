@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.registries.blocks;
 
-import com.blackgear.platform.core.CoreRegistry;
+import com.blackgear.vanillabackport.internal.platform.core.CoreRegistry;
 import com.blackgear.vanillabackport.core.VanillaBackport;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;

@@ -1,6 +1,6 @@
 package com.blackgear.vanillabackport.common.integrations;
 
-import com.blackgear.platform.common.data.LootModifier;
+import com.blackgear.vanillabackport.internal.platform.common.data.LootModifier;
 import com.blackgear.vanillabackport.common.registries.worldgen.ModBiomes;
 import com.blackgear.vanillabackport.common.registries.blocks.ModBlocks;
 import com.blackgear.vanillabackport.common.registries.items.ModItems;
