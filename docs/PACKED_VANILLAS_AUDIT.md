@@ -74,7 +74,7 @@ A Termux static-check script currently passes 26/26 assertions:
 - internal bootstrap, Mixin configs, access widener, and MIT notice are present;
 - Forge-only target and original mod id are preserved.
 
-This is static validation, not a compile or runtime pass. The first GitHub Actions compile reached common Java compilation and exposed one additional upstream gap: ShelfRenderer references ModelBoundingBoxManager, but that class is absent from the public Platform 1.20.1 source. A local implementation was added to derive bounds from baked quads using the FIXED item transform. The next CI run must verify this implementation and reveal any further missing API or dependency.
+This is static validation, not a compile or runtime pass. The first GitHub Actions compile reached common Java compilation and exposed one additional upstream gap: ShelfRenderer references ModelBoundingBoxManager, but that class is absent from the public Platform 1.20.1 source. A local implementation was added to derive bounds from baked quads using the FIXED item transform; the next compile passed that helper. The following compile exposed another API mismatch: VanillaBackport uses BuiltInCoreRegistry.registerKey overloads that are absent from the public Platform source. Compatibility overloads now delegate to the existing register methods; another CI compile is pending.
 
 ## Resource-pack compatibility: 1.20.1 vs modern packs
 
@@ -102,7 +102,7 @@ The mod's existing resource reload code primarily handles its own JSON assets (w
 
 ### High-confidence candidate
 
-`ClientWaypointManager.forEachWaypoint()` currently creates a stream and sorts the entire waypoint collection by distance on every HUD render. The locator bar is rendered per frame, so this repeats sorting and stream work at display refresh rate even though waypoint state is updated on client ticks. Investigate a reusable sorted snapshot/cache invalidated on waypoint mutations and refreshed at most once per client tick. Preserve far-to-near draw order; compare behavior when two markers overlap or cross distance order within a tick.
+`ClientWaypointManager.forEachWaypoint()` originally created a stream and sorted the entire waypoint collection by distance on every HUD render. This has now been replaced locally with a reusable sorted snapshot. It is rebuilt only when the waypoint revision, camera entity, entity tick, or entity position changes; the original distance comparator and far-to-near draw order are retained. The snapshot is replaced rather than mutated, so a callback that changes waypoints does not invalidate an active iteration. The cache change is awaiting CI compile and in-game visual verification.
 
 ### Low-value / do not optimize without evidence
 
@@ -142,7 +142,7 @@ The initial workflow exposed two upstream repository issues:
 1. The checked-in Gradle wrapper JAR is missing and the wrapper script is not executable. The CI workflow therefore installs Gradle 8.14.4 directly with `gradle/actions/setup-gradle`.
 2. With Gradle available, the unmodified upstream project still fails at dependency resolution because the Platform common JAR is expected at `/libs/Platform-common-1.20.1-1.4.2.jar`, which is not part of a clean checkout.
 
-The second failure is the reproducibility defect the internal-source approach is intended to remove. The first post-internalization CI run failed at the missing ModelBoundingBoxManager symbol; that missing API has since been filled locally. A second CI compile is pending.
+The second failure is the reproducibility defect the internal-source approach is intended to remove. The first post-internalization CI run failed at the missing ModelBoundingBoxManager symbol; the local helper compiled in the next run. That run then exposed missing registerKey compatibility overloads; they have been added and a further compile is pending.
 
 ## Remaining implementation order
 

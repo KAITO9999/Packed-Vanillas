@@ -76,6 +76,15 @@ public class BuiltInCoreRegistry<T> {
     public RegistryKey<T> register(String name, T value) {
         return this.register(name, key -> value);
     }
+
+    /** Compatibility alias retained for VanillaBackport's existing registration call sites. */
+    public <E extends T> RegistryKey<T> registerKey(String name, Function<RegistryKey<T>, E> value) {
+        return this.register(name, value);
+    }
+
+    public RegistryKey<T> registerKey(String name, T value) {
+        return this.register(name, value);
+    }
     
     @Deprecated(forRemoval = true)
     public <E extends T> ResourceKey<T> resource(String name, Function<ResourceKey<T>, E> value) {
