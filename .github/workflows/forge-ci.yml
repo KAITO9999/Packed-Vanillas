@@ -28,7 +28,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Compile Forge artifact
-        run: ./gradlew :forge:build --no-daemon
+        run: bash ./gradlew :forge:build --no-daemon
 
       - name: Upload Forge artifacts
         if: success()
