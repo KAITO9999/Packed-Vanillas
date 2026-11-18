@@ -1,0 +1,42 @@
+name: Packed-Vanillas Forge CI
+
+on:
+  push:
+    branches:
+      - "packed/**"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  forge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Compile Forge artifact
+        run: ./gradlew :forge:build --no-daemon
+
+      - name: Upload Forge artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: packed-vanillas-forge
+          path: |
+            forge/build/libs/*.jar
+            !forge/build/libs/*-sources.jar
+            !forge/build/libs/*-dev-shadow.jar
+          if-no-files-found: error
